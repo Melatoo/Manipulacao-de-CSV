@@ -126,6 +126,11 @@ void csvData::mudaDado() {
             arquivo.read((char*)&dado, sizeof(csvData));
             i++;
         }
+        //se o id nao for encontrado, ele vai mostrar uma mensagem de erro      
+        if (dado.ID != id) {
+            cout << "ID nao encontrado" << endl;
+            return;
+        }
         dado.mostraDado();
         arquivo.close();
         fstream arquivo;
